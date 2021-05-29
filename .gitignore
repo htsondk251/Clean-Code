@@ -3,7 +3,7 @@
 *.pptx
 *.docx
 C3/
-2.SeparateFunction/
+
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 
