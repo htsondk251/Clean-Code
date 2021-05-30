@@ -6,15 +6,8 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 public class Generator {
-    int M;
-    int[] P;
-    
-    public Generator(int m, int[] p) {
-        M = m;
-        P = p;
-    }
-
-    public void generate() {
+    public static int[] generate(int M) {
+        int[] P = new int[M+1];
         int J = 1;
         int SQUARE = 9;
         int ORD = 2;
@@ -45,6 +38,6 @@ public class Generator {
             K = K + 1;
             P[K] = J;
         }
+        return P;
     }
-    
 }

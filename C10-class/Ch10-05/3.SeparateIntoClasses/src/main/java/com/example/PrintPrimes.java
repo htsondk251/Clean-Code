@@ -6,23 +6,13 @@ import lombok.*;
 @Getter
 @AllArgsConstructor
 public class PrintPrimes {
-    int M;
-    int P[];
-    int RR;
-    int CC;
-
-    public PrintPrimes(int m, int rR, int cC) {
-        M = m;
-        RR = rR;
-        CC = cC;
-        P = new int[M + 1];
-    }
-
     public static void main(String[] args) {
-            PrintPrimes p = new PrintPrimes(1000, 20, 6);
-            Generator generator = new Generator(p.M, p.P);
-            generator.generate();
-            Print printer = new Print(p.RR, p.CC, p.M, p.P);
-            printer.print();
+        final int NUMBER_OF_PRIMES = 1000;
+        int[] P = Generator.generate(NUMBER_OF_PRIMES);
+        final int ROWS_PER_PAGE = 20;
+        final int COLUMNS_PER_PAGE = 6;
+
+        Print printer = new Print(ROWS_PER_PAGE, COLUMNS_PER_PAGE, "The First " + NUMBER_OF_PRIMES + " Prime Numbers");
+        printer.print(P);
     }
 }
